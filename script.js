@@ -28,7 +28,6 @@ function checkEmail(input) {
   }
 }
 
-// Check required fields
 function checkRequired(inputArr) {
   let isRequired = false;
   inputArr.forEach(function(input) {
@@ -53,26 +52,26 @@ function checkLength(input, min, max) {
   } else if (input.value.length > max) {
     showMeErrors(
       input,
-      `${getFieldName(input)} must be less than ${max} characters`
+      `${getFieldName(input)} dürfen nicht mehr als ${max} Zeichen haben`
     );
   } else {
     showMeSuccesses(input);
   }
 }
 
-// Check passwords match
+
 function checkPasswordsMatch(input1, input2) {
   if (input1.value !== input2.value) {
-    showMeErrors(input2, 'Passwords do not match');
+    showMeErrors(input2, 'Passwörter stimmen nicht überein');
   }
 }
 
-// Get fieldname
+
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Event listeners
+
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
